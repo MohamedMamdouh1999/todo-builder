@@ -19,7 +19,7 @@ const Navbar = () => {
                 { user.jwt ? 
                     <>
                         <li>
-                            <span>{user.user.username}</span>
+                            <NavLink to="/profile">Profile</NavLink>
                         </li>
                         <li>
                             <button type="button" className="cursor-pointer" onClick={onLogout}>Logout</button>

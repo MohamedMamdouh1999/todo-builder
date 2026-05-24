@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router";
 
 import RootLayout from "../pages/RootLayout";
 import Home from "../pages/Home";
+import Profile from "../pages/Profile";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import NotFound from "../pages/NotFound";
@@ -17,6 +18,12 @@ const router = createBrowserRouter([
                 index: true,
                 element: <ProtectedRoot redirectPath="/login">
                     <Home />
+                </ProtectedRoot>
+            },
+            {
+                path: "/profile",
+                element: <ProtectedRoot redirectPath="/login">
+                    <Profile />
                 </ProtectedRoot>
             },
             {
