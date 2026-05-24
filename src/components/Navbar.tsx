@@ -14,12 +14,12 @@ const Navbar = () => {
 
     return (
         <nav className="p-4 flex justify-between items-center bg-blue-500 text-white rounded">
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/todo-builder">Home</NavLink>
             <ul className="flex gap-4">
                 { user.jwt ? 
                     <>
                         <li>
-                            <NavLink to="/profile">Profile</NavLink>
+                            <NavLink to="/todo-builder/profile">Profile</NavLink>
                         </li>
                         <li>
                             <button type="button" className="cursor-pointer" onClick={onLogout}>Logout</button>
@@ -27,10 +27,10 @@ const Navbar = () => {
                     </>
                     : <>
                         <li>
-                            <NavLink to="/login">Login</NavLink>
+                            <NavLink to="/todo-builder/login">Login</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/register">Register</NavLink>
+                            <NavLink to="/todo-builder/register">Register</NavLink>
                         </li>
                     </>
                 }

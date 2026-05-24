@@ -11,30 +11,30 @@ import ProtectedRoot from "../auth/ProtectedRoot";
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: "/todo-builder",
         element: <RootLayout />,
         children: [
             {
                 index: true,
-                element: <ProtectedRoot redirectPath="/login">
+                element: <ProtectedRoot redirectPath="/todo-builder/login">
                     <Home />
                 </ProtectedRoot>
             },
             {
-                path: "/profile",
-                element: <ProtectedRoot redirectPath="/login">
+                path: "profile",
+                element: <ProtectedRoot redirectPath="/todo-builder/login">
                     <Profile />
                 </ProtectedRoot>
             },
             {
-                path: "/login",
-                element: <ProtectedRoot reverse redirectPath="/">
+                path: "login",
+                element: <ProtectedRoot reverse redirectPath="/todo-builder">
                     <Login />
                 </ProtectedRoot>
             },
             {
-                path: "/register",
-                element: <ProtectedRoot reverse redirectPath="/">
+                path: "register",
+                element: <ProtectedRoot reverse redirectPath="/todo-builder">
                     <Register />
                 </ProtectedRoot>
             }
