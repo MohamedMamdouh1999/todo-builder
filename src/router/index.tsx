@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router";
 
 import RootLayout from "../pages/RootLayout";
-import Home from "../pages/Home";
+import Todos from "../pages/Todos";
 import Profile from "../pages/Profile";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
@@ -17,7 +17,7 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <ProtectedRoot redirectPath="/todo-builder/login">
-                    <Home />
+                    <Todos />
                 </ProtectedRoot>
             },
             {
