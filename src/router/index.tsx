@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router";
+import { createHashRouter } from "react-router";
 
 import RootLayout from "../pages/RootLayout";
 import Home from "../pages/Home";
@@ -9,7 +9,7 @@ import NotFound from "../pages/NotFound";
 
 import ProtectedRoot from "../auth/ProtectedRoot";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <RootLayout />,
