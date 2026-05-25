@@ -2,6 +2,7 @@ import { useState } from "react";
 import toast from "react-hot-toast";
 import { useQueryClient } from "@tanstack/react-query";
 
+import TodoSkeleton from "../components/TodoSkeleton";
 import Modal from "../components/ui/Modal";
 import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
@@ -129,7 +130,11 @@ const Todos = () => {
     return (
         <>
             <Button onClick={openModalHandler} width="w-fit" className="mb-4 mx-auto bg-violet-700 hover:bg-violet-800">Add Todo</Button>
-            {isLoading ? <h3 className="text-center font-medium">Loading...</h3> : <ul className="space-y-3">{todosList}</ul>}
+            {
+                isLoading ? 
+                <div className="space-y-3">{Array.from({ length: 3 }, (_, index) => <TodoSkeleton key={index} />)}</div>
+                : (todosList.length > 0 ? <ul className="space-y-3">{todosList}</ul> : <p className="text-center text-gray-500">No todos found</p>)
+            }
             <Modal isOpen={isOpenModal} close={closeModalHandler} title={isEditing ? "Edit todo" : "Add a new todo"}>
                 <form onSubmit={onSubmitHandler} className="flex flex-col gap-y-3">
                     <Input type="text" placeholder="Title" value={todo.title} onChange={(event) => setTodo({ ...todo, title: event.target.value })} />
